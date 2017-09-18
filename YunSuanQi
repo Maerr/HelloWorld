@@ -1,0 +1,72 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define Num 10
+using namespace std;
+void main()
+{
+	int A[Num], B[Num], i, k, t, T, a[Num], b[Num], c[Num];
+	char C;
+	srand((unsigned)time(NULL));
+	t = 0; T = 0;
+
+	for (i = 0; i < Num; i++)
+	{
+		//产生随机符号
+		k = rand() % 4;
+		if (k == 0)
+			C = '+';
+		else if (k == 1)
+			C = '-';
+		else if (k == 2)
+			C = '*';
+		else if (k == 3)
+			C = '/';
+		A[i] = rand() % 100;
+		B[i] = rand() % 100;
+		//输出题目
+		if (C == '+')
+		{ 
+			cout << A[i] << " + " << B[i] << " = " << endl; a[i] = A[i] + B[i];
+		}
+		else if (C == '-')
+		{
+			cout << A[i] << " - " << B[i] << " = " << endl; a[i] = A[i] - B[i];
+		}
+		else if (C == '*')
+		{
+			cout << A[i] << " * " << B[i] << " = " << endl; a[i] = A[i] * B[i];
+		}
+		else if (C == '/')
+		{
+			cout << A[i] << " / " << B[i] << " = " << endl; a[i] = A[i] / B[i];
+		}
+		cin >> b[i];
+		//验证答案
+		if (a[i] == b[i])
+
+		{
+			t++;
+			cout << "恭喜你，回答正确，目前得分为：" << t << endl << endl;
+		}
+		else
+		{
+			cout << "正确答案为 "<<a[i]<<endl;
+			cout << "很遗憾回答错误，目前得分为：" << t << endl << endl;
+
+		}
+
+	}
+
+	/*
+		if (t == 29)
+			cout << "恭喜你都答对了！" << endl;
+		else
+		{
+			cout << "第";
+			for (i = 0; i < T; i++)
+				cout << c[i] + 1 << "题错了！" << endl;
+		}*/
+	
+}
